@@ -1,4 +1,3 @@
-// Array de dinossauros simulado apenas para fins de exemplo.
 const dinosaurs = [
   {
     name: "Aardonyx",
@@ -10,14 +9,10 @@ const dinosaurs = [
   },
 ]
 
-// Objeto de resolvers para as operações de consulta definidas no esquema GraphQL.
 export const resolvers = {
   Query: {
-    // Resolver para a operação 'dinosaurs'.
     dinosaurs: () => dinosaurs,
-    // Resolver para a operação 'dinosaur'.
     dinosaur: (_: any, args: any) => {
-      // Procura um dinossauro no array 'dinosaurs' pelo nome fornecido no argumento 'name'.
       return dinosaurs.find((dinosaur) => dinosaur.name === args.name)
     },
   },
